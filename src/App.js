@@ -1,6 +1,7 @@
 import './main.css';
 import Header from './components/Header/Header';
 import AboutSite from './components/AboutSite/AboutSite';
+import WhyThisCompany from './components/WhyThisCompany/WhyThisCompany';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <div className='мейн'>
         <AboutSite />
+        <WhyThisCompany />
       </div>
     </div>
   );

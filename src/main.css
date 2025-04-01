@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.app {
+    margin-bottom: 20rem;
+}
+
 button {
     cursor: pointer;
     padding: 10px 25px;

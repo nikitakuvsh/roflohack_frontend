@@ -1,0 +1,103 @@
+.почему__мы {
+    background: #f0f0f0; /* Светлый фон */
+    font-family: "Comic Sans MS", cursive, sans-serif; /* Шрифт из нулевых */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.почему__мы--блок {
+    background: #ffb3b3; /* Легкий розовый фон */
+    border-radius: 15px;
+    width: 80%;
+    padding: 30px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.why__title {
+    background: linear-gradient(45deg, #ff6ec7, #ff9a8b);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.why__title--h1 {
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.why__description {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.why__title--p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.why__points {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.why__point {
+    width: 30%;
+    background: #ffff99;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.why__point:hover {
+    transform: scale(1.1);
+    background: #ffcc00;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.why__title--h2 {
+    font-size: 20px;
+    color: #333;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.why__testimonial {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.why__testimonial--h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0066;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+@keyframes popup {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.why__testimonial--h3 {
+    animation: popup 1s ease-out;
+}
