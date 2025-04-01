@@ -59,7 +59,7 @@ function App() {
           </div>
         )}
         
-        <Header />
+        <Header balance={balanceGlobal}/>
         <div className='мейн'>
           <Routes>
             <Route path="/" element={<><AboutSite /> <WhyThisCompany /> <PopularQuestions /></>} />
