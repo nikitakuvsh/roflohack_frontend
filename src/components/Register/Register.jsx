@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Register.css';
 
 export default function Register() {
@@ -9,6 +10,14 @@ export default function Register() {
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
     const [socket, setSocket] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (localStorage.getItem('logged')) {
+            navigate('/account');
+        }
+    }, [navigate]); // useEffect запускается при монтировании
+
 
     const connectSocket = () => {
         const ws = new WebSocket('ws://localhost:8765/register');
@@ -24,6 +33,7 @@ export default function Register() {
             } else {
                 setMessage(data.message);
                 setError('');
+                navigate('/login');
             }
         };
         ws.onerror = (err) => {
@@ -83,7 +93,7 @@ export default function Register() {
                 {message && <p className="регистрация__успех">{message}</p>}
                 {account && <p className="регистрация__аккаунт">Ваш аккаунт: {account}</p>}
                 <div>
-                    <a href='/login'>Есть аккаунт?</a>
+                    <a href='/login'>Есть аккаунт?</a> <span>Зарегистрироваться</span>
                 </div>
             </div>
         </div>

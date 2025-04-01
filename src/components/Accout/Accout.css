@@ -66,3 +66,13 @@
     0% { opacity: 1; }
     100% { opacity: 0.2; }
 }
+
+.account__button {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+.account__button:hover {
+    text-decoration: underline;
+}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,6 +9,12 @@ export default function Login({ setFio, fioGlobal, setBalance, balance }) {
     const [message, setMessage] = useState('');
     const [socket, setSocket] = useState(null);
     const navigate = useNavigate();
+
+    useEffect(() => {
+            if (localStorage.getItem('logged')) {
+                navigate('/account');
+            }
+        }, [navigate]);
 
     const connectSocket = () => {
         const ws = new WebSocket('ws://localhost:8765/login');
@@ -28,6 +34,7 @@ export default function Login({ setFio, fioGlobal, setBalance, balance }) {
                 setError('');
                 setFio(data.name);
                 setBalance(data.balance);
+                localStorage.setItem('logged', 'true');
                 navigate('/profile');
             }
         };
@@ -42,6 +49,9 @@ export default function Login({ setFio, fioGlobal, setBalance, balance }) {
 
         if (email === 'admin@admin' & password === 'admin') {
             localStorage.setItem('adminLogged', 'true');
+            localStorage.setItem('logged', 'true');
+            setFio('admin');
+            setBalance(9999999999);
             navigate('/account');
         } else {
             if (!socket || socket.readyState !== WebSocket.OPEN) {
