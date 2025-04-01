@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Login.css';
-import DinosaurGame from './DinosaurGame'; // Импортируем компонент игры
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -76,9 +75,6 @@ export default function Login() {
                 </form>
                 {error && <p className='логин__ошибка'>{error}</p>}
                 {message && <p className='логин__успех'>{message}</p>}
-            </div>
-            <div className='игра__контейнер'>
-                <DinosaurGame /> {/* Встраиваем игру динозаврика */}
             </div>
         </div>
     );
