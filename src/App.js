@@ -11,6 +11,7 @@ import Register from './components/Register/Register';
 import DocumentsListring from './components/DocumentsListing/DocumentsListing';
 import Contacts from './components/Contacts/Contacts';
 import SupportChat from './components/SupportChat/SupportChat';
+import AdminPanel from './components/AdminPanel/AdminPanel';
 import useSmoothScroll from './smoothScroll';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
             <div className="ad-content">
               <h2>🔥 Внимание! Лучшая реклама здесь! 🔥</h2>
               <p>Купите наше супер-предложение прямо сейчас!</p>
+              <p>Надоела реклама? Купи админку!</p>
               <button onClick={() => setShowAd(false)}>Закрыть</button>
             </div>
           </div>
@@ -65,6 +67,7 @@ function App() {
             <Route path='/register' element={<Register />}></Route>
             <Route path='/documents' element={<DocumentsListring />}></Route>
             <Route path='/contacts' element={<Contacts />}></Route>
+            <Route path='/admin' element={<AdminPanel />}></Route>
           </Routes>
         </div>
         <SupportChat />

@@ -10,6 +10,10 @@ export default function Header() {
         <div className='самый_вверх' style={{ backgroundColor: 'yellow', padding: '10px' }}>
             <div className='flex'>
                 <div>
+                    <h2 className='admin__title' onClick={() => localStorage.getItem('adminLogged') ? navigate('/admin') : navigate('/register')}>АДМИНКА</h2>
+                </div>
+
+                <div>
                     <img className='header__img' alt='' src={headerLogo} title='Логотип' onClick={() => navigate('/')} />
                 </div>
 
