@@ -34,9 +34,9 @@ export default function Login({ setFio, fioGlobal, setBalance, balance, emailGlo
                 setError('');
                 setFio(data.name);
                 setBalance(data.balance);
-                setEmail(data.email);
+                setEmailGlobal(data.email);
                 localStorage.setItem('logged', 'true');
-                navigate('/profile');
+                navigate('/account');
             }
         };
         ws.onerror = (err) => {
