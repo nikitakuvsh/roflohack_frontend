@@ -51,11 +51,11 @@ export default function Register() {
             connectSocket();
             setTimeout(() => {
                 if (socket && socket.readyState === WebSocket.OPEN) {
-                    socket.send(JSON.stringify({ email, password }));
+                    socket.send(JSON.stringify({ email, password,fio }));
                 }
             }, 500);
         } else {
-            socket.send(JSON.stringify({ email, password }));
+            socket.send(JSON.stringify({ email, password,fio }));
         }
     };
 
