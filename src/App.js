@@ -27,7 +27,8 @@ function App() {
         {showSnow && (
           <div className="снежинки__контейнер">
             {Array.from({ length: 50 }).map((_, i) => (
-              <div key={i} className="снежинка"></div>
+              <div key={i} className="снежинка">❄</div>
+              // Теперь каждая снежинка будет показывать символ снежинки
             ))}
           </div>
         )}
@@ -46,3 +47,4 @@ function App() {
 }
 
 export default App;
+
