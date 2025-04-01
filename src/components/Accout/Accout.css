@@ -1,0 +1,68 @@
+.аккаунт {
+    width: 100%;
+    background: linear-gradient(to bottom, #00aaff, #ffffff);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 1.5rem;
+}
+
+.аккаунт__блок {
+    background: #ffcc00;
+    border: 5px solid #0000ff;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 10px 10px 0px #ff00ff;
+    max-height: 50%;
+}
+
+.аккаунт__изображение {
+    margin-bottom: 15px;
+}
+
+.аватарка {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+.аккаунт__заголовок {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px red;
+}
+
+.баланс__счет {
+    font-size: 18px;
+    color: green;
+}
+
+.аккаунт__кнопка {
+    background: red;
+    color: white;
+    border: 2px solid black;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.аккаунт__кнопка:hover {
+    background: darkred;
+}
+
+.аккаунт__статус {
+    font-size: 16px;
+    color: #ff0000;
+    font-weight: bold;
+    animation: мигание 0.7s infinite alternate;
+}
+
+@keyframes мигание {
+    0% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
