@@ -1,0 +1,51 @@
+.популярные_вопросы {
+    background: linear-gradient(to right, #ffcc00, #ff6600); /* Градиент в духе 2000-х */
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.вопросы__заголовок {
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    background: blue;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.вопросы__блок {
+    background: yellow;
+    border: 3px solid red;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.вопросы__вопрос {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+}
+
+.вопросы__ответ {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 5px;
+    color: darkred;
+}
+
+.вопросы__блок:hover {
+    background: lightgreen;
+    border-color: blue;
+    transition: 0.3s;
+    cursor: pointer;
+}
