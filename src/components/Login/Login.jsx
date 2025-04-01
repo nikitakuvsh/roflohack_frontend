@@ -8,7 +8,6 @@ export default function Login() {
     const [message, setMessage] = useState('');
     const [socket, setSocket] = useState(null);
 
-    // Устанавливаем соединение с WebSocket сервером
     const connectSocket = () => {
         const ws = new WebSocket('ws://localhost:8765/login');
         ws.onopen = () => {
@@ -19,9 +18,11 @@ export default function Login() {
             const data = JSON.parse(messageEvent.data);
             if (data.error) {
                 setError(data.error);
+				console.log("ERROR");
                 setMessage('');
             } else {
                 setMessage(data.message);
+				console.log("nonERROR");
                 setError('');
             }
         };
@@ -35,7 +36,6 @@ export default function Login() {
         e.preventDefault();
         if (!socket || socket.readyState !== WebSocket.OPEN) {
             connectSocket();
-            // Немного подождём установления соединения
             setTimeout(() => {
                 if (socket && socket.readyState === WebSocket.OPEN) {
                     socket.send(JSON.stringify({ email, password }));
