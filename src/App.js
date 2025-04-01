@@ -8,6 +8,7 @@ import PopularQuestions from './components/PopularQuestions/PopularQuestions';
 import Accout from './components/Accout/Accout';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import DocumentsListring from './components/DocumentsListing/DocumentsListing';
 import useSmoothScroll from './smoothScroll';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path='/account' element={<Accout />}></Route>
             <Route path='/login' element={<Login />}></Route>
             <Route path='/register' element={<Register />}></Route>
+            <Route path='/documents' element={<DocumentsListring />}></Route>
           </Routes>
         </div>
       </div>

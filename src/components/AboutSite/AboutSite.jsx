@@ -1,7 +1,9 @@
 import "./AboutSite.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutSite() {
+    const navigation = useNavigate();
     const [currentSite, setCurrentSite] = useState(null);
     const sites = [
         "https://lknpd.nalog.ru/auth/login"
@@ -18,6 +20,7 @@ export default function AboutSite() {
             } else {
                 clearInterval(interval);
                 setTimeout(() => setCurrentSite(null), 2000);
+                navigation('/documents');
             }
         }, 2000);
     };

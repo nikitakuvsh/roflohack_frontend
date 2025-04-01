@@ -33,6 +33,7 @@
     height: 70px;
     border-radius: 50%;
     transition: all 5s ease-in-out;
+    cursor: pointer;
 }
 
 .header__img:hover {
