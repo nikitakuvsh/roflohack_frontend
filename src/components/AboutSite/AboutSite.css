@@ -1,0 +1,40 @@
+.о_сайте {
+    background: red; /* Абсурдный фон */
+    color: yellow; /* Плохая контрастность */
+    font-size: 25pt;
+    text-align: center;
+    padding: 20px;
+    border: 5px dashed black;
+}
+
+.важное_название {
+    text-transform: uppercase;
+    text-shadow: 3px 3px yellow;
+    animation: дрожание 0.2s infinite;
+}
+
+@keyframes дрожание {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, 1px); }
+    50% { transform: translate(2px, -1px); }
+    75% { transform: translate(-1px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+.кнопка_паники {
+    background: linear-gradient(45deg, red, black);
+    color: white;
+    border: 2px solid white;
+    font-weight: 900;
+    margin-top: 1.5rem;
+}
+
+.поддельный_сайт {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 9999;
+}
