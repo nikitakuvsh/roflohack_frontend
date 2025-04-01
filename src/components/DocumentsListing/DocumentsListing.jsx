@@ -7,11 +7,13 @@ const fetchDocuments = async () => {
         { title: "Лицензия на телепортацию", description: "Действует в пределах Солнечной системы." },
         { title: "Диплом Гарварда", description: "Настоящий диплом с печатью Министерства магии." },
         { title: "Паспорт гражданина Луны", description: "Официальный документ, подтверждающий гражданство Луны." },
-        { title: "Разрешение на безделье", description: "Позволяет не работать. Подписано важными людьми." }
+        { title: "Разрешение на безделье", description: "Позволяет не работать. Подписано важными людьми." },
+		{ title: "Справка о недееспособности по причине питонист", description: "Тоже позволяет не работать, но, [данные удалены]" }
+		
     ];
 };
 
-export default function DocumentsListing() {
+export default function DocumentsListing({fio}) {
     const [documents, setDocuments] = useState([]);
 
     useEffect(() => {
@@ -23,7 +25,7 @@ export default function DocumentsListing() {
             const response = await fetch(`http://localhost:8766/documents`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name: docTitle }),
+                body: JSON.stringify({ name: docTitle, fio:fio }),
             });
 
             if (!response.ok) {
