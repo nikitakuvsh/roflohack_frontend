@@ -22,13 +22,14 @@
   
   .мем {
     margin-top: 20px;
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 300px;
+    max-height: 500px;
   }
   
-  .мем img {
-    width: 100%;
-    height: auto;
+  .mems__image {
     border-radius: 10px; /* Закругление углов */
+    max-width: 300px;
+    max-height: 500px;
+    object-fit: cover;
   }
   

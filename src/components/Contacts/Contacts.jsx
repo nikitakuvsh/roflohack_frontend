@@ -43,7 +43,7 @@ export default function Contacts() {
 
                 {currentMeme && (
                     <div className='мем'>
-                        <img src={currentMeme} alt='Мем' />
+                        <img className='mem__image' src={currentMeme} alt='Мем' />
                     </div>
                 )}
 
