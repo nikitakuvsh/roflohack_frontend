@@ -17,6 +17,8 @@ function App() {
   useSmoothScroll();
 
   const [showSnow, setShowSnow] = useState(true);
+  const [fioGlobal, setFioGlobal] = useState('Хуета');
+  const [balanceGlobal, setBalanceGlobal] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
@@ -38,8 +40,8 @@ function App() {
         <div className='мейн'>
           <Routes>
             <Route path="/" element={<><AboutSite /> <WhyThisCompany /> <PopularQuestions /></>} />
-            <Route path='/account' element={<Accout />}></Route>
-            <Route path='/login' element={<Login />}></Route>
+            <Route path='/account' element={<Accout fio={fioGlobal} balance={balanceGlobal} />}></Route>
+            <Route path='/login' element={<Login setFio={setFioGlobal} fioGlobal={fioGlobal} setBalance={setBalanceGlobal} balance={balanceGlobal} />}></Route>
             <Route path='/register' element={<Register />}></Route>
             <Route path='/documents' element={<DocumentsListring />}></Route>
             <Route path='/contacts' element={<Contacts />}></Route>
