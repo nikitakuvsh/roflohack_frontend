@@ -19,7 +19,7 @@ export default function Header() {
                             <li style={{ listStyle: 'none', display: 'inline', margin: '0 15px', fontWeight: 'bold' }}>Главная</li>
                             <li style={{ listStyle: 'none', display: 'inline', margin: '0 15px', fontWeight: 'bold', cursor: 'default' }}>Получить справку</li>
                             <li style={{ listStyle: 'none', display: 'inline', margin: '0 15px', fontWeight: 'bold' }}>Контакты</li>
-                            <li style={{ listStyle: 'none', display: 'inline', margin: '0 15px', fontWeight: 'bold', fontStyle: 'italic'}} className='lk--button' onClick={() => navigate('/account')}>Личный кабинет</li>
+                            <li style={{ listStyle: 'none', display: 'inline', margin: '0 15px', fontWeight: 'bold', fontStyle: 'italic'}} className='lk--button' onClick={() => localStorage.getItem('isLogged') ?  navigate('/account') : navigate('/login')}>Личный кабинет</li>
                         </div>
                     </nav>
                 </div>

@@ -6,6 +6,8 @@ import AboutSite from './components/AboutSite/AboutSite';
 import WhyThisCompany from './components/WhyThisCompany/WhyThisCompany';
 import PopularQuestions from './components/PopularQuestions/PopularQuestions';
 import Accout from './components/Accout/Accout';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 import useSmoothScroll from './smoothScroll';
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
           <Routes>
             <Route path="/" element={<><AboutSite /> <WhyThisCompany /> <PopularQuestions /></>} />
             <Route path='/account' element={<Accout />}></Route>
+            <Route path='/login' element={<Login />}></Route>
+            <Route path='/register' element={<Register />}></Route>
           </Routes>
         </div>
       </div>

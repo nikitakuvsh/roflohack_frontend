@@ -5,6 +5,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     padding-top: 1.5rem;
 }
@@ -15,7 +16,6 @@
     padding: 20px;
     width: 350px;
     box-shadow: 10px 10px 0px #ff00ff;
-    max-height: 50%;
 }
 
 .аккаунт__изображение {
