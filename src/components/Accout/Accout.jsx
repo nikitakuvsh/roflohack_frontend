@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import defaultImage from '../../images/default-account-image.png';
 
 export default function Accout({ fio, balance }) {
-    const [status, setStatus] = useState("Вы в списке доверенных пользователей!");
     const navigate = useNavigate();
 
     return (
@@ -17,9 +16,9 @@ export default function Accout({ fio, balance }) {
                 <div className='аккаунт__баланс'>
                     <h2 className='баланс__счет'>Ваш баланс: {balance} ₽</h2>
                     <button className='аккаунт__кнопка'>Пополнить</button>
-                    <p className='аккаунт__статус'>{status}</p>
+                    <p className='аккаунт__статус'>Вы в списке доверенных пользоваталей!</p>
                 </div>
-                <button className='account__button' onClick={() => {localStorage.removeItem('logged'); navigate('/login');}}>Выйти</button>
+                <button className='account__button' onClick={() => {localStorage.removeItem('logged'); localStorage.removeItem('adminLogged'); navigate('/login');}}>Выйти</button>
             </div>
         </div>
     );

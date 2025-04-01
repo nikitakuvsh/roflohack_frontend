@@ -20,6 +20,7 @@ function App() {
   const [showSnow, setShowSnow] = useState(true);
   const [fioGlobal, setFioGlobal] = useState('Хуета');
   const [balanceGlobal, setBalanceGlobal] = useState(0);
+  const [email, setEmail] = useState('');
   const [showAd, setShowAd] = useState(false);
 
   useEffect(() => {
@@ -63,9 +64,9 @@ function App() {
           <Routes>
             <Route path="/" element={<><AboutSite /> <WhyThisCompany /> <PopularQuestions /></>} />
             <Route path='/account' element={<Accout fio={fioGlobal} balance={balanceGlobal} />}></Route>
-            <Route path='/login' element={<Login setFio={setFioGlobal} fioGlobal={fioGlobal} setBalance={setBalanceGlobal} balance={balanceGlobal} />}></Route>
+            <Route path='/login' element={<Login setFio={setFioGlobal} fioGlobal={fioGlobal} setBalance={setBalanceGlobal} balance={balanceGlobal} emailGlobal={email} setEmailGlobal={setEmail} />}></Route>
             <Route path='/register' element={<Register />}></Route>
-            <Route path='/documents' element={<DocumentsListring fio={fioGlobal} />}></Route>
+            <Route path='/documents' element={<DocumentsListring fio={fioGlobal} email={email} />}></Route>
             <Route path='/contacts' element={<Contacts />}></Route>
             <Route path='/admin' element={<AdminPanel />}></Route>
           </Routes>

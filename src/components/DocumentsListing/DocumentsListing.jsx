@@ -13,7 +13,7 @@ const fetchDocuments = async () => {
     ];
 };
 
-export default function DocumentsListing({fio}) {
+export default function DocumentsListing({ fio, email }) {
     const [documents, setDocuments] = useState([]);
 
     useEffect(() => {

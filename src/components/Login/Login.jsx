@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function Login({ setFio, fioGlobal, setBalance, balance }) {
+export default function Login({ setFio, fioGlobal, setBalance, balance, emailGlobal, setEmailGlobal }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -34,6 +34,7 @@ export default function Login({ setFio, fioGlobal, setBalance, balance }) {
                 setError('');
                 setFio(data.name);
                 setBalance(data.balance);
+                setEmail(data.email);
                 localStorage.setItem('logged', 'true');
                 navigate('/profile');
             }
