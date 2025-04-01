@@ -2,12 +2,18 @@
     width: 100%;
     background: url('https://i.imgur.com/w4V0mYw.jpg'); /* Windows XP обои */
     display: flex;
+    flex-direction: column; /* Изменили направление для размещения формы и игры */
     align-items: center;
     justify-content: center;
     font-family: 'Comic Sans MS', cursive;
     height: 100vh;
 }
-
+.игра__контейнер {
+    margin-top: 20px; /* Отступ между формой и игрой */
+    z-index: 0; /* Убедимся, что игра под формой */
+    display: flex;
+    justify-content: center;
+}
 .логин__блок {
     background: #c0c0c0;
     border: 5px ridge #808080;
@@ -15,6 +21,7 @@
     width: 320px;
     text-align: center;
     box-shadow: 5px 5px 0px #404040;
+    z-index: 1; /* Убедимся, что блок выше, чем фон */
 }
 
 .логин__заголовок {
@@ -65,3 +72,4 @@
     0% { opacity: 1; }
     100% { opacity: 0.2; }
 }
+

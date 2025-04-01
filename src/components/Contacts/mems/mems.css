@@ -1,0 +1,34 @@
+.контакты-способы {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .кнопка_мемы {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50; /* Зеленый цвет кнопки */
+    color: white; /* Цвет текста */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .кнопка_мемы:hover {
+    background-color: #45a049; /* Цвет при наведении */
+  }
+  
+  .мем {
+    margin-top: 20px;
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  
+  .мем img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Закругление углов */
+  }
+  

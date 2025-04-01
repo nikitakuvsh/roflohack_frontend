@@ -62,3 +62,20 @@
     padding: 10px;
     border: 2px inset gray;
 }
+
+.кнопка_мемы {
+    background: linear-gradient(45deg, yellow, orange);
+    color: black;
+    border: 2px solid black;
+    font-weight: 900;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.кнопка_мемы:hover {
+    background: linear-gradient(45deg, orange, yellow);
+}
+
+.кнопка_мемы:active {
+    transform: scale(0.95);
+}
