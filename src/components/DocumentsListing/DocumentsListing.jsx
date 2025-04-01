@@ -17,7 +17,7 @@ export default function DocumentsListing() {
     const [documents, setDocuments] = useState([]);
 
     useEffect(() => {
-        fetchDocuments().then(setDocuments); // Загрузка документов
+        fetchDocuments().then(setDocuments);
     }, []);
 
     return (
