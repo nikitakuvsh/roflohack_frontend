@@ -8,7 +8,7 @@ export default function WhyThisCompany() {
                     <div className='why__title--h1'>Почему именно мы?</div>
                 </div>
                 <div className='why__description'>
-                    <div className='why__title--p'>Мы – это команда профессионалов, работающая с одним единственным принципом: мы умеем делать невозможное возможным.</div>
+                    <div className='why__title--p'>Мы – это команда профессионалов, работающая с одним единственным принципом: мы умеем делать возможное невозможным.</div>
                 </div>
                 <div className='why__points'>
                     <div className='why__point'>

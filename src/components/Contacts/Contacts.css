@@ -1,0 +1,64 @@
+.контакты {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffcc00, #ff6600);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+}
+
+.контакты-блок {
+    background: #c0c0c0;
+    padding: 20px;
+    border: 4px ridge #808080;
+    box-shadow: 4px 4px 0px #404040;
+    width: 400px;
+}
+
+.контакты-заголовок {
+    font-size: 22px;
+    text-shadow: 2px 2px 3px black;
+    color: blue;
+}
+
+.контакты-текст {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+
+.контакты-способы {
+    margin-top: 15px;
+}
+
+.контакты-пункт {
+    font-size: 14px;
+    padding: 5px;
+    background: white;
+    border: 2px outset gray;
+    margin: 5px 0;
+}
+
+.контакты-иконка {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.контакты-данные {
+    font-weight: bold;
+    color: darkblue;
+}
+
+.контакты-вопрос {
+    font-size: 18px;
+    margin-top: 15px;
+    color: darkred;
+}
+
+.контакты-вопрос-текст {
+    font-size: 14px;
+    background: white;
+    padding: 10px;
+    border: 2px inset gray;
+}

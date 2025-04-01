@@ -9,6 +9,8 @@ import Accout from './components/Accout/Accout';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import DocumentsListring from './components/DocumentsListing/DocumentsListing';
+import Contacts from './components/Contacts/Contacts';
+import SupportChat from './components/SupportChat/SupportChat';
 import useSmoothScroll from './smoothScroll';
 
 function App() {
@@ -40,8 +42,10 @@ function App() {
             <Route path='/login' element={<Login />}></Route>
             <Route path='/register' element={<Register />}></Route>
             <Route path='/documents' element={<DocumentsListring />}></Route>
+            <Route path='/contacts' element={<Contacts />}></Route>
           </Routes>
         </div>
+        <SupportChat />
       </div>
     </Router>
   );
