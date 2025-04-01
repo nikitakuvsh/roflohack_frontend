@@ -4,7 +4,7 @@ import './Register.css';
 export default function Register() {
     const [email, setName] = useState('');
 	const [password, setPassword] = useState('');
-	
+    const [fio, setFio] = useState('');
     const [account, setAccount] = useState('');
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
@@ -59,7 +59,7 @@ export default function Register() {
                     className='регистрация__поле' 
                     value={email} 
                     onChange={(e) => setName(e.target.value)} 
-                    placeholder="Ваше Имя"
+                    placeholder="Ваша почта"
                 />
 				<input 
                     type="text" 
@@ -67,6 +67,13 @@ export default function Register() {
                     value={password} 
                     onChange={(e) => setPassword(e.target.value)} 
                     placeholder="Ваш пароль(только цифры от 0 до          8)"
+                />
+                <input 
+                    type="text" 
+                    className='регистрация__поле' 
+                    value={fio} 
+                    onChange={(e) => setFio(e.target.value)} 
+                    placeholder="Ваше Имя"
                 />
 				
                 <button className='регистрация__кнопка' onClick={handleRegister}>

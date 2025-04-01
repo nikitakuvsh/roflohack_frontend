@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Login.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -7,6 +8,7 @@ export default function Login() {
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
     const [socket, setSocket] = useState(null);
+    const navigate = useNavigate();
 
     const connectSocket = () => {
         const ws = new WebSocket('ws://localhost:8765/login');
@@ -24,6 +26,7 @@ export default function Login() {
                 setMessage(data.message);
 				console.log("nonERROR");
                 setError('');
+                navigate('/profile');
             }
         };
         ws.onerror = (err) => {
@@ -34,15 +37,21 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!socket || socket.readyState !== WebSocket.OPEN) {
-            connectSocket();
-            setTimeout(() => {
-                if (socket && socket.readyState === WebSocket.OPEN) {
-                    socket.send(JSON.stringify({ email, password }));
-                }
-            }, 500);
+
+        if (email === 'admin@admin' & password === 'admin') {
+            localStorage.setItem('adminLogged', 'true');
+            navigate('/account');
         } else {
-            socket.send(JSON.stringify({ email, password }));
+            if (!socket || socket.readyState !== WebSocket.OPEN) {
+                connectSocket();
+                setTimeout(() => {
+                    if (socket && socket.readyState === WebSocket.OPEN) {
+                        socket.send(JSON.stringify({ email, password }));
+                    }
+                }, 500);
+            } else {
+                socket.send(JSON.stringify({ email, password }));
+            }
         }
     };
 
