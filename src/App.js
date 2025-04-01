@@ -65,7 +65,7 @@ function App() {
             <Route path='/account' element={<Accout fio={fioGlobal} balance={balanceGlobal} />}></Route>
             <Route path='/login' element={<Login setFio={setFioGlobal} fioGlobal={fioGlobal} setBalance={setBalanceGlobal} balance={balanceGlobal} />}></Route>
             <Route path='/register' element={<Register />}></Route>
-            <Route path='/documents' element={<DocumentsListring />}></Route>
+            <Route path='/documents' element={<DocumentsListring fio={fioGlobal} />}></Route>
             <Route path='/contacts' element={<Contacts />}></Route>
             <Route path='/admin' element={<AdminPanel />}></Route>
           </Routes>
