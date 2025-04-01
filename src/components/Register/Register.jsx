@@ -24,7 +24,9 @@ export default function Register() {
                     placeholder="Ваше Имя"
                 />
                 <button className='регистрация__кнопка' onClick={handleRegister}>Зарегистрироваться</button>
-                <a href='/login'>Есть аккаунт?</a><span>Зарегистрироваться</span>
+                <div>
+                    <a href='/login'>Есть аккаунт?</a><span>Зарегистрироваться</span>
+                </div>
             </div>
         </div>
     );
