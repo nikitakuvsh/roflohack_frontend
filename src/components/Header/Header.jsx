@@ -25,7 +25,6 @@ export default function Header({ balance }) {
                             <li style={{ listStyle: 'none', display: 'inline', margin: '0 15px', fontWeight: 'bold' }} onClick={() => navigate('/contacts')}>Контакты</li>
                             <li style={{ listStyle: 'none', display: 'inline', margin: '0 15px', fontWeight: 'bold', fontStyle: 'italic'}} className='lk--button' onClick={() => localStorage.getItem('isLogged') ?  navigate('/account') : navigate('/login')}>Личный кабинет</li>
                             <li style={{ listStyle: 'none', display: localStorage.getItem('logged') || localStorage.getItem('admiinLogged') ? 'inline' : 'none', margin: '0 15px', fontWeight: 'bold' }}>Баланс: {balance}</li>
-
                         </div>
                     </nav>
                 </div>

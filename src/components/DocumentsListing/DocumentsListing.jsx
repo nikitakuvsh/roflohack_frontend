@@ -12,8 +12,11 @@ const fetchDocuments = async () => {
     ];
 };
 
-export default function DocumentsListing({ fio, email }) {
+export default function DocumentsListing({ fio, email, setBalance }) {
     const [documents, setDocuments] = useState([]);
+    const [error, setError] = useState('');
+    const [message, setMessage] = useState('');
+    const [socket, setSocket] = useState(null);
 	console.log(email);
     useEffect(() => {
         fetchDocuments().then(setDocuments);
@@ -40,6 +43,29 @@ export default function DocumentsListing({ fio, email }) {
                 ws.close();
             };
         });
+    };
+
+    const connectSocket = () => {
+        const ws = new WebSocket('ws://localhost:8765/login');
+        ws.onopen = () => {
+            console.log('Connected to WebSocket server');
+            setSocket(ws);
+        };
+        ws.onmessage = (messageEvent) => {
+            const data = JSON.parse(messageEvent.data);
+            if (data.error) {
+                setError(data.error);
+				console.log("ERROR");
+                setMessage('');
+            } else {
+                setMessage(data.message);
+                setBalance(data.balance);
+            }
+        };
+        ws.onerror = (err) => {
+            console.error('Socket encountered error: ', err, 'Closing socket');
+            ws.close();
+        };
     };
 
     const handleBuy = async (docTitle) => {
@@ -70,6 +96,8 @@ export default function DocumentsListing({ fio, email }) {
         } catch (error) {
             console.error("Ошибка загрузки документа:", error);
         }
+
+        connectSocket();
     };
 
     return (
