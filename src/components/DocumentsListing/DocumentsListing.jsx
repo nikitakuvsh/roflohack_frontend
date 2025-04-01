@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import './DocumentsListing.css';
 
-// Заглушка для API (просто замени `fetchDocuments` на реальный запрос)
 const fetchDocuments = async () => {
-    // ❗ Здесь вставь реальный API-запрос
     return [
         { title: "Справка от физкультуры", description: "Справка форма №5 подойдёт для вузов и школ." },
         { title: "Лицензия на телепортацию", description: "Действует в пределах Солнечной системы." },
@@ -20,6 +18,32 @@ export default function DocumentsListing() {
         fetchDocuments().then(setDocuments);
     }, []);
 
+    const handleBuy = async (docTitle) => {
+        try {
+            const response = await fetch(`http://localhost:8766/documents`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: docTitle }),
+            });
+
+            if (!response.ok) {
+                throw new Error("Ошибка при получении документа");
+            }
+
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `${docTitle}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        } catch (error) {
+            console.error("Ошибка загрузки документа:", error);
+        }
+    };
+
     return (
         <div className='listing__documents'>
             {documents.map((doc, index) => (
@@ -27,7 +51,7 @@ export default function DocumentsListing() {
                     <h2 className='product__title'>{doc.title}</h2>
                     <p className='product__description'>{doc.description}</p>
                     <span className='product__price'>Цена: Договорная</span>
-                    <button className='product__button'>Купить</button>
+                    <button className='product__button' onClick={() => handleBuy(doc.title)}>Купить</button>
                 </div>
             ))}
         </div>
