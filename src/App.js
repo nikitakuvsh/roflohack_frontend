@@ -19,11 +19,20 @@ function App() {
   const [showSnow, setShowSnow] = useState(true);
   const [fioGlobal, setFioGlobal] = useState('Хуета');
   const [balanceGlobal, setBalanceGlobal] = useState(0);
+  const [showAd, setShowAd] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       setShowSnow(false);
     }, 3000);
+  }, []);
+
+  useEffect(() => {
+    const adInterval = setInterval(() => {
+      setShowAd(true);
+    }, 60000); // Реклама каждую минуту
+
+    return () => clearInterval(adInterval);
   }, []);
 
   return (
@@ -36,6 +45,17 @@ function App() {
             ))}
           </div>
         )}
+        
+        {showAd && (
+          <div className="ad-modal">
+            <div className="ad-content">
+              <h2>🔥 Внимание! Лучшая реклама здесь! 🔥</h2>
+              <p>Купите наше супер-предложение прямо сейчас!</p>
+              <button onClick={() => setShowAd(false)}>Закрыть</button>
+            </div>
+          </div>
+        )}
+        
         <Header />
         <div className='мейн'>
           <Routes>
